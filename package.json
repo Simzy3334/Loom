@@ -1,0 +1,40 @@
+{
+  "name": "loom-engine",
+  "description": "A visual novel engine that statically verifies the entire branching story graph before anyone plays a frame.",
+  "keywords": ["visual-novel", "game-engine", "story", "interpreter", "react", "typescript"],
+  "license": "MIT",
+  "author": "Muhammad Asim Saeed",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Simzy3334/loom.git"
+  },
+  "homepage": "https://github.com/Simzy3334/loom#readme",
+  "bugs": {
+    "url": "https://github.com/Simzy3334/loom/issues"
+  },
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "lint-story": "tsx cli.ts lint story/demo.loom",
+    "explore": "tsx cli.ts explore story/demo.loom"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.2",
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8"
+  }
+}

@@ -1,0 +1,19 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci || npm install
+      - name: Engine tests (parser, linter, interpreter, saves, simulator)
+        run: npm test
+      - name: Story static analysis (fails on any error)
+        run: npm run lint-story
+      - name: Exhaustive playthrough simulation (fails if an ending is lost)
+        run: npm run explore
+      - name: Build the game
+        run: npm run build

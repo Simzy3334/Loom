@@ -1,0 +1,86 @@
+title "Transfer Student"
+version 1
+
+# ------------------------------------------------------------- characters
+char rei   "Rei Ayame"      #d98a6a
+char kaito "Kaito Mori"     #6d93a8
+char sensei "Ms. Takahashi" #8aa37b
+
+:: intro
+@bg classroom
+@music morning
+Spring. A new city, a new school, a hallway that smells like chalk and rain.
+sensei: Class, this is our transfer student. Be kind — or at least be curious.
+Thirty pairs of eyes. One empty desk, second row, by the window.
+@show rei neutral
+rei: Psst. You're sitting on my friend's ghost. She moved to Osaka.
+* "That's... comforting?" -> banter
+    $ trust_rei = 1
+* "Sorry — I can move." -> polite
+    $ trust_rei = 0
+
+:: banter
+rei (grinning): Comforting is my specialty. Rei Ayame — resident tour guide, unlicensed.
+-> lunch
+
+:: polite
+rei: Relax, I'm joking. Mostly.
+-> lunch
+
+:: lunch
+@bg courtyard
+@music daytime
+Lunch. The courtyard sorts itself into orbits — clubs, cliques, couples.
+@show kaito neutral
+kaito: You look lost. That's the cafeteria line for people who enjoy suffering.
+kaito: I'm Kaito. Chess club. We have a kettle and lower standards.
+@show rei surprised
+rei: Don't listen to him. The roof has a better view and worse tea.
+* "Go with Kaito to chess club" -> chess_club
+    $ trust_kaito = 2
+* "Follow Rei to the roof" -> rooftop
+    $ trust_rei += 2
+* {trust_rei >= 1} "Invite them BOTH to the roof" -> rooftop_together
+    $ trust_rei += 1
+    $ trust_kaito = 1
+
+:: chess_club
+@bg clubroom
+@hide rei
+kaito (focused): Rule one — the kettle is sacred. Rule two, never rush an endgame.
+He sets up the board. You lose in eleven moves and somehow feel welcomed.
+kaito: You hang pieces like my grandmother. Same time tomorrow?
+@if trust_kaito >= 2 -> friend_end
+-> quiet_end
+
+:: rooftop
+@bg rooftop
+@hide kaito
+rei: See? Whole city from up here. That water tower is my favorite ugly thing.
+The wind takes half her words. The view keeps the rest.
+rei (soft): I don't show people this spot, usually.
+@if trust_rei >= 3 -> rei_end
+-> quiet_end
+
+:: rooftop_together
+@bg rooftop
+rei: Fine, chess boy, you can come. But the kettle stays downstairs.
+kaito: The kettle goes where I go. It's a package deal.
+Somewhere between her laughter and his tea, the afternoon becomes easy.
+-> friend_end
+
+:: rei_end
+@bg sunset
+rei (blushing): Same time tomorrow? Just... us?
+The water tower has never looked less ugly.
+@ending "Rooftop Promise"
+
+:: friend_end
+@bg sunset
+New numbers in your phone. New reasons to show up early.
+@ending "Found Your People"
+
+:: quiet_end
+@bg evening
+A quiet first day. But quiet isn't the same as empty — tomorrow is still coming.
+@ending "A Slow Beginning"
