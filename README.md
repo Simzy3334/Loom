@@ -1,6 +1,6 @@
 # 𝐋𝐨𝐨𝐦 — a visual novel engine with a compiler's brain
 
-[![CI](https://github.com/Simzy3334/loom/actions/workflows/ci.yml/badge.svg)](https://github.com/Simzy3334/loom/actions/workflows/ci.yml)
+[![CI](https://github.com/Simzy3334/Loom/actions/workflows/ci.yml/badge.svg)](https://github.com/Simzy3334/Loom/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Write your story in a five-minute script language. Loom **statically verifies the entire branching graph before anyone plays a frame** — broken jumps, unreachable scenes, flags read-but-never-set, choice dead-ends, endings nobody can reach — then simulates **every possible playthrough** in milliseconds and ships the game as a static website.
@@ -90,7 +90,7 @@ Deploying a game is `npm run build` → 53 KB gzipped static site → GitHub Pag
 ## Quickstart
 
 ```bash
-git clone https://github.com/Simzy3334/loom.git && cd loom
+git clone https://github.com/Simzy3334/Loom.git && cd loom
 npm install
 
 npm run dev          # play the demo with hot reload

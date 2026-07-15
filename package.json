@@ -6,11 +6,11 @@
   "author": "Muhammad Asim Saeed",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Simzy3334/loom.git"
+    "url": "git+https://github.com/Simzy3334/Loom.git"
   },
-  "homepage": "https://github.com/Simzy3334/loom#readme",
+  "homepage": "https://github.com/Simzy3334/Loom#readme",
   "bugs": {
-    "url": "https://github.com/Simzy3334/loom/issues"
+    "url": "https://github.com/Simzy3334/Loom/issues"
   },
   "private": true,
   "version": "1.0.0",
